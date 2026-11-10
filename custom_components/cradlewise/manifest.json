@@ -1,0 +1,12 @@
+{
+  "domain": "cradlewise",
+  "name": "Cradlewise",
+  "codeowners": ["@thetimetraveler"],
+  "config_flow": true,
+  "documentation": "https://github.com/thetimetraveler/ha-cradlewise",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/thetimetraveler/ha-cradlewise/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

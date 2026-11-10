@@ -1,0 +1,111 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Cradlewise",
+        "description": "Generate an API token in the Cradlewise web dashboard (left menu: **Cradlewise Data API** → **Generate**) and paste it here. Tokens are bound to one baby, so add the integration once per baby. A Nurture Plus subscription is required.",
+        "data": {
+          "token": "API token"
+        },
+        "data_description": {
+          "token": "Starts with `cw_`. Only a baby's admin can generate a token, and it can't be created in the mobile app."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Cradlewise token expired",
+        "description": "Cradlewise tokens are valid for 60 days. Generate a new token in the web dashboard and paste it here. Generating a new token invalidates the old one.",
+        "data": {
+          "token": "API token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Cradlewise",
+      "invalid_auth": "The token is invalid or has expired",
+      "invalid_token_format": "The token should start with `cw_`",
+      "no_subscription": "A Nurture Plus subscription is required for the Cradlewise Data API",
+      "rate_limited": "Rate limited by Cradlewise, try again in a minute",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This token is already configured",
+      "reauth_successful": "Token updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling intervals",
+        "description": "The API allows 2 status requests per minute, 60 sleep requests per hour and 2,880 requests per day in total.",
+        "data": {
+          "status_interval": "Status interval (seconds)",
+          "sleep_interval": "Sleep metrics interval (minutes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "sleeping": "Sleeping",
+          "awake": "Awake",
+          "stirring": "Stirring",
+          "crying": "Crying",
+          "away": "Away"
+        }
+      },
+      "status_since": {
+        "name": "Status since"
+      },
+      "soothes": {
+        "name": "Soothes today"
+      },
+      "naps": {
+        "name": "Naps today"
+      },
+      "longest_stretch": {
+        "name": "Longest stretch"
+      },
+      "time_in_bed": {
+        "name": "Time in bed"
+      },
+      "awake_in_bed": {
+        "name": "Awake in bed"
+      },
+      "rise_time": {
+        "name": "Rise time"
+      },
+      "bedtime": {
+        "name": "Bedtime"
+      },
+      "avg_sleep": {
+        "name": "Average sleep (7 days)"
+      },
+      "avg_day_sleep": {
+        "name": "Average day sleep (7 days)"
+      },
+      "avg_night_sleep": {
+        "name": "Average night sleep (7 days)"
+      },
+      "avg_nap_duration": {
+        "name": "Average nap duration (7 days)"
+      },
+      "avg_naps_per_day": {
+        "name": "Average naps per day (7 days)"
+      }
+    },
+    "binary_sensor": {
+      "in_crib": {
+        "name": "In crib"
+      },
+      "bounce": {
+        "name": "Bounce"
+      },
+      "music": {
+        "name": "Music"
+      }
+    }
+  }
+}
